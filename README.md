@@ -1,1 +1,1 @@
-# tarot
+# Tarot Arcana
