@@ -1,0 +1,104 @@
+﻿<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarot Ritual Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-glow page-glow-left"></div>
+  <div class="page-glow page-glow-right"></div>
+
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Tarot Ritual Studio</p>
+      <h1>เว็บดูดวงไพ่ทาโรต์</h1>
+      <p class="hero-copy">
+        
+        รองรับดูรายวัน 1 ใบ, 3 ใบ, รายเดือน 10 ใบ, ไพ่กลับหัว และคำทำนายแยกงาน ความรัก การเงิน
+      </p>
+    </section>
+
+    <section class="control-panel">
+      <div class="panel-head">
+        <h2>ตั้งคำถามและเลือกการเปิดไพ่</h2>
+        <p>เลือก spread ที่ต้องการ แล้วค่อยตัดสินใจว่าจะสับไพ่ ตัดไพ่ หรือเปิดไพ่ทันที</p>
+      </div>
+
+      <div class="form-grid">
+        <label class="field">
+          <span>คำถามหรือเรื่องที่อยากดู</span>
+          <textarea id="question-input" rows="3" placeholder="เช่น เดือนนี้งานจะไปทิศทางไหน ความรักควรตัดสินใจอย่างไร หรือวันนี้ควรระวังอะไร"></textarea>
+        </label>
+
+        <label class="field">
+          <span>เลือกรูปแบบการเปิดไพ่</span>
+          <select id="spread-select"></select>
+        </label>
+
+        <label class="toggle-field">
+          <input id="reversed-toggle" type="checkbox" checked>
+          <span>เปิดใช้ไพ่กลับหัว</span>
+        </label>
+
+        <label class="toggle-field">
+          <input id="dramatic-toggle" type="checkbox" checked>
+          <span>สับแบบลึกขึ้น</span>
+        </label>
+      </div>
+
+      <div class="ritual-actions">
+        <button id="shuffle-btn" class="primary-btn" type="button">สับไพ่</button>
+        <button id="cut-btn" class="secondary-btn" type="button">ตัดไพ่</button>
+        <button id="reveal-btn" class="accent-btn" type="button">เปิดไพ่</button>
+        <button id="reset-btn" class="ghost-btn" type="button">เริ่มใหม่</button>
+      </div>
+    </section>
+
+    <section class="ritual-strip">
+      <article class="ritual-step optional">
+        <strong>สับไพ่</strong>
+        <p>ใช้เมื่ออยากกระจายพลังของสำรับไพ่ใหม่ก่อนเปิด</p>
+      </article>
+      <article class="ritual-step optional">
+        <strong>ตัดไพ่</strong>
+        <p>ใช้เมื่ออยากเพิ่มพิธีและแบ่งชั้นพลังของคำถาม</p>
+      </article>
+      <article class="ritual-step core">
+        <strong>เปิดไพ่</strong>
+        <p>ขั้นตอนหลักที่จำเป็น ถ้ายังไม่สับหรือตัดก็เปิดได้ทันที</p>
+      </article>
+    </section>
+
+    <section class="deck-stage">
+      <div class="deck-visual">
+        <div class="deck-stack" id="deck-stack">
+          <img src="image/back tarot card divination mysterious eyes_6690625.png" alt="Tarot deck back">
+        </div>
+        <div class="deck-meta">
+          <p id="status-line" class="status-line">พร้อมเปิดไพ่ คุณจะสับหรือตัดไพ่ก่อนก็ได้ หรือกดเปิดไพ่ทันทีได้เลย</p>
+          <p id="cut-line" class="cut-line">สำรับอยู่ในสภาพเริ่มต้น ยังไม่ได้ตัดไพ่</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reading-area">
+      <div class="reading-head">
+        <h2 id="reading-title">ยังไม่ได้เปิดไพ่</h2>
+        <p id="reading-subtitle">เมื่อเปิดไพ่แล้ว คำทำนายรายตำแหน่งจะขึ้นตรงนี้</p>
+      </div>
+      <div id="card-board" class="card-board"></div>
+      <div id="reading-summary" class="reading-summary empty">
+        <h3>คำสรุปภาพรวม</h3>
+        <p>ยังไม่มีคำทำนายภาพรวม</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
